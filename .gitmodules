@@ -1,0 +1,3 @@
+[submodule "www/httpdocs/extensions/root_page_params"]
+	path = www/httpdocs/extensions/root_page_params
+	url = http://github.com/creativedutchmen/root_page_params.git
