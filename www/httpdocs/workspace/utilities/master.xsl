@@ -87,7 +87,7 @@
 										<xsl:text>active</xsl:text>
 									</xsl:attribute>
 								</xsl:if>
-								<a href="{$root}/{$url-language}/project/">Projects</a>
+								<a href="{$root}/{$url-language}/projects/">Projects</a>
 							</li>
 						</ul>
 					</div>
@@ -97,6 +97,10 @@
             <div class="container">
 				
                 <xsl:apply-templates />
+            	
+            	<xsl:if test="$member-is-logged-in">
+            		<p><strong><xsl:value-of select="//members/entry/first-name" disable-output-escaping="yes" /></strong>, you are logged in. (<a href="?member-action=logout&amp;redirect={$current-url}">Logout</a>)</p>
+            	</xsl:if>
             	
             </div>
 

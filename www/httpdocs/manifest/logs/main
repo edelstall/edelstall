@@ -100,3 +100,27 @@ Line: 158 - XSLTProcessor::transformToXml(): The called template 'members-form-g
 04 November 2011 13:56 > User Notice: The page you requested, <code>/workspace/images/favicon.ico/</code>, does not exist. in file /Users/kirkstrobeck/Athey Creek/_git/churchdeploy/www/httpdocs/symphony/lib/toolkit/class.frontendpage.php on line 315
 04 November 2011 13:56 > User Notice: The page you requested, <code>/workspace/css/slideshow.css/</code>, does not exist. in file /Users/kirkstrobeck/Athey Creek/_git/churchdeploy/www/httpdocs/symphony/lib/toolkit/class.frontendpage.php on line 315
 04 November 2011 13:56 > User Notice: The page you requested, <code>/workspace/images/favicon.ico/</code>, does not exist. in file /Users/kirkstrobeck/Athey Creek/_git/churchdeploy/www/httpdocs/symphony/lib/toolkit/class.frontendpage.php on line 315
+11 November 2011 08:52 > UNKNOWN: Line: 145 - XSLTProcessor::importStylesheet(): /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/workspace/pages/projects.xsl:53: parser error : Opening and ending tag mismatch: fieldset line 37 and div
+Line: 145 - XSLTProcessor::importStylesheet(): 				</div>
+Line: 145 - XSLTProcessor::importStylesheet(): 				      ^
+Line: 145 - XSLTProcessor::importStylesheet(): /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/workspace/pages/projects.xsl:125: parser error : Opening and ending tag mismatch: form line 30 and fieldset
+Line: 145 - XSLTProcessor::importStylesheet(): 			</fieldset>
+Line: 145 - XSLTProcessor::importStylesheet(): 			           ^
+Line: 145 - XSLTProcessor::importStylesheet(): /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/workspace/pages/projects.xsl:130: parser error : Opening and ending tag mismatch: div line 21 and form
+Line: 145 - XSLTProcessor::importStylesheet(): 		</form>
+Line: 145 - XSLTProcessor::importStylesheet(): 		       ^
+Line: 145 - XSLTProcessor::importStylesheet(): /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/workspace/pages/projects.xsl:131: parser error : Opening and ending tag mismatch: if line 18 and div
+Line: 145 - XSLTProcessor::importStylesheet(): 			</div>
+Line: 145 - XSLTProcessor::importStylesheet(): 			      ^
+Line: 145 - XSLTProcessor::importStylesheet(): /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/workspace/pages/projects.xsl:133: parser error : Opening and ending tag mismatch: template line 9 and if
+Line: 145 - XSLTProcessor::importStylesheet(): 	</xsl:if>
+Line: 145 - XSLTProcessor::importStylesheet(): 	         ^
+Line: 145 - XSLTProcessor::importStylesheet(): /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/workspace/pages/projects.xsl:137: parser error : Opening and ending tag mismatch: stylesheet line 2 and template
+Line: 145 - XSLTProcessor::importStylesheet(): </xsl:template>
+Line: 145 - XSLTProcessor::importStylesheet():                ^
+Line: 145 - XSLTProcessor::importStylesheet(): /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/workspace/pages/projects.xsl:140: parser error : Extra content at the end of the document
+Line: 145 - XSLTProcessor::importStylesheet(): <xsl:template match="//projects-all-entries-by-date/entry">
+Line: 145 - XSLTProcessor::importStylesheet(): ^
+Line: 145 - XSLTProcessor::importStylesheet(): compilation error: file /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/ line 3 element import
+Line: 145 - XSLTProcessor::importStylesheet(): xsl:import : unable to load /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/workspace/pages/projects.xsl
+Line: 158 - XSLTProcessor::transformToXml(): No stylesheet associated to this object in file /Users/kirkstrobeck/INTO/_git/edelstall/www/httpdocs/symphony/lib/toolkit/class.frontendpage.php on line 272

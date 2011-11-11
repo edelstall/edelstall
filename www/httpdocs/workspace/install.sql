@@ -61,7 +61,7 @@ CREATE TABLE `tbl_fields_input` (
   `validator` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_input` ***
 INSERT INTO `tbl_fields_input` (`id`, `field_id`, `validator`) VALUES (43, 2, NULL);
@@ -137,12 +137,12 @@ CREATE TABLE `tbl_fields_multilingual` (
   `use_def_lang_vals` enum('yes','no') DEFAULT 'yes',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
 
 -- *** DATA: `tbl_fields_multilingual` ***
-INSERT INTO `tbl_fields_multilingual` (`id`, `field_id`, `column_length`, `text_size`, `formatter`, `text_validator`, `text_length`, `unique_handle`, `use_def_lang_vals`) VALUES (13, 14, 25, 'single', 'none', NULL, 0, 'yes', 'yes');
-INSERT INTO `tbl_fields_multilingual` (`id`, `field_id`, `column_length`, `text_size`, `formatter`, `text_validator`, `text_length`, `unique_handle`, `use_def_lang_vals`) VALUES (14, 15, 25, 'single', 'none', '/^[^\\s:\\/?#]+:(?:\\/{2,3})?[^\\s.\\/?#]+(?:\\.[^\\s.\\/?#]+)*(?:\\/[^\\s?#]*\\??[^\\s?#]*(#[^\\s#]*)?)?$/', 0, 'yes', 'yes');
-INSERT INTO `tbl_fields_multilingual` (`id`, `field_id`, `column_length`, `text_size`, `formatter`, `text_validator`, `text_length`, `unique_handle`, `use_def_lang_vals`) VALUES (15, 17, 25, 'medium', 'markdown_extra_with_smartypants', NULL, 0, 'yes', 'yes');
+INSERT INTO `tbl_fields_multilingual` (`id`, `field_id`, `column_length`, `text_size`, `formatter`, `text_validator`, `text_length`, `unique_handle`, `use_def_lang_vals`) VALUES (90, 14, 25, 'single', 'none', NULL, 0, 'yes', 'yes');
+INSERT INTO `tbl_fields_multilingual` (`id`, `field_id`, `column_length`, `text_size`, `formatter`, `text_validator`, `text_length`, `unique_handle`, `use_def_lang_vals`) VALUES (92, 17, 25, 'medium', 'markdown_extra_with_smartypants', NULL, 0, 'yes', 'yes');
+INSERT INTO `tbl_fields_multilingual` (`id`, `field_id`, `column_length`, `text_size`, `formatter`, `text_validator`, `text_length`, `unique_handle`, `use_def_lang_vals`) VALUES (91, 22, 25, 'single', 'none', '/^[^\\s:\\/?#]+:(?:\\/{2,3})?[^\\s.\\/?#]+(?:\\.[^\\s.\\/?#]+)*(?:\\/[^\\s?#]*\\??[^\\s?#]*(#[^\\s#]*)?)?$/', 0, 'yes', 'yes');
 
 -- *** STRUCTURE: `tbl_fields_order_entries` ***
 DROP TABLE IF EXISTS `tbl_fields_order_entries`;
@@ -185,10 +185,10 @@ CREATE TABLE `tbl_fields_selectbox_link` (
   `limit` int(4) unsigned NOT NULL DEFAULT '20',
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_fields_selectbox_link` ***
-INSERT INTO `tbl_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `show_association`, `related_field_id`, `limit`) VALUES (8, 13, 'no', 'yes', 5, 20);
+INSERT INTO `tbl_fields_selectbox_link` (`id`, `field_id`, `allow_multiple_selection`, `show_association`, `related_field_id`, `limit`) VALUES (40, 13, 'no', 'yes', 5, 20);
 
 -- *** STRUCTURE: `tbl_fields_stage` ***
 DROP TABLE IF EXISTS `tbl_fields_stage`;
@@ -288,10 +288,10 @@ CREATE TABLE `tbl_fields_uniqueupload` (
   `validator` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `field_id` (`field_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `tbl_fields_uniqueupload` ***
-INSERT INTO `tbl_fields_uniqueupload` (`id`, `field_id`, `destination`, `validator`) VALUES (7, 16, '/workspace/uploads/projects', '/\\.(?:bmp|gif|jpe?g|png)$/i');
+INSERT INTO `tbl_fields_uniqueupload` (`id`, `field_id`, `destination`, `validator`) VALUES (39, 16, '/workspace/uploads/projects', '/\\.(?:bmp|gif|jpe?g|png)$/i');
 
 -- *** STRUCTURE: `tbl_fields_upload` ***
 DROP TABLE IF EXISTS `tbl_fields_upload`;
@@ -347,9 +347,10 @@ CREATE TABLE `tbl_entries_data_13` (
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`),
   KEY `relation_id` (`relation_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- *** DATA: `tbl_entries_data_13` ***
+INSERT INTO `tbl_entries_data_13` (`id`, `entry_id`, `relation_id`) VALUES (48, 49, 8);
 
 -- *** STRUCTURE: `tbl_entries_data_14` ***
 DROP TABLE IF EXISTS `tbl_entries_data_14`;
@@ -358,24 +359,20 @@ CREATE TABLE `tbl_entries_data_14` (
   `entry_id` int(11) unsigned NOT NULL,
   `handle` varchar(255) DEFAULT NULL,
   `value` text,
+  `handle-de` varchar(255) DEFAULT NULL,
+  `value-de` text,
+  `word_count-de` int(11) unsigned DEFAULT NULL,
+  `value_format-de` text,
+  `handle-en` varchar(255) DEFAULT NULL,
+  `value-en` text,
+  `word_count-en` int(11) unsigned DEFAULT NULL,
+  `value_format-en` text,
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_14` ***
-
--- *** STRUCTURE: `tbl_entries_data_15` ***
-DROP TABLE IF EXISTS `tbl_entries_data_15`;
-CREATE TABLE `tbl_entries_data_15` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `entry_id` int(11) unsigned NOT NULL,
-  `handle` varchar(255) DEFAULT NULL,
-  `value` text,
-  PRIMARY KEY (`id`),
-  KEY `entry_id` (`entry_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- *** DATA: `tbl_entries_data_15` ***
+INSERT INTO `tbl_entries_data_14` (`id`, `entry_id`, `handle`, `value`, `handle-de`, `value-de`, `word_count-de`, `value_format-de`, `handle-en`, `value-en`, `word_count-en`, `value_format-en`) VALUES (37, 49, 'sante', 'Sante', 'sante', 'Sante', 1, 'Sante', NULL, NULL, 0, NULL);
 
 -- *** STRUCTURE: `tbl_entries_data_16` ***
 DROP TABLE IF EXISTS `tbl_entries_data_16`;
@@ -390,9 +387,10 @@ CREATE TABLE `tbl_entries_data_16` (
   UNIQUE KEY `entry_id` (`entry_id`),
   KEY `file` (`file`),
   KEY `mimetype` (`mimetype`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_16` ***
+INSERT INTO `tbl_entries_data_16` (`id`, `entry_id`, `file`, `size`, `mimetype`, `meta`) VALUES (50, 49, '/uploads/projects/screen-shot-2011-11-10-at-4.00-4ebc8367c06f6.png', 1300242, 'image/png', 'a:3:{s:8:\"creation\";s:25:\"2011-11-11T02:07:35+00:00\";s:5:\"width\";i:1301;s:6:\"height\";i:1151;}');
 
 -- *** STRUCTURE: `tbl_entries_data_17` ***
 DROP TABLE IF EXISTS `tbl_entries_data_17`;
@@ -401,11 +399,20 @@ CREATE TABLE `tbl_entries_data_17` (
   `entry_id` int(11) unsigned NOT NULL,
   `handle` varchar(255) DEFAULT NULL,
   `value` text,
+  `handle-de` varchar(255) DEFAULT NULL,
+  `value-de` text,
+  `word_count-de` int(11) unsigned DEFAULT NULL,
+  `value_format-de` text,
+  `handle-en` varchar(255) DEFAULT NULL,
+  `value-en` text,
+  `word_count-en` int(11) unsigned DEFAULT NULL,
+  `value_format-en` text,
   PRIMARY KEY (`id`),
   KEY `entry_id` (`entry_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 
 -- *** DATA: `tbl_entries_data_17` ***
+INSERT INTO `tbl_entries_data_17` (`id`, `entry_id`, `handle`, `value`, `handle-de`, `value-de`, `word_count-de`, `value_format-de`, `handle-en`, `value-en`, `word_count-en`, `value_format-en`) VALUES (37, 49, NULL, 'New website for the **Sante** product line.', NULL, 'New website for the **Sante** product line.', 7, '<p>New website for the <strong>Sante</strong> product line.</p>\n', NULL, NULL, 0, NULL);
 
 -- *** STRUCTURE: `tbl_entries_data_2` ***
 DROP TABLE IF EXISTS `tbl_entries_data_2`;
@@ -423,6 +430,28 @@ CREATE TABLE `tbl_entries_data_2` (
 -- *** DATA: `tbl_entries_data_2` ***
 INSERT INTO `tbl_entries_data_2` (`id`, `entry_id`, `handle`, `value`) VALUES (10, 7, 'john', 'John');
 INSERT INTO `tbl_entries_data_2` (`id`, `entry_id`, `handle`, `value`) VALUES (12, 8, 'kirk', 'Kirk');
+
+-- *** STRUCTURE: `tbl_entries_data_22` ***
+DROP TABLE IF EXISTS `tbl_entries_data_22`;
+CREATE TABLE `tbl_entries_data_22` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `entry_id` int(11) unsigned NOT NULL,
+  `handle` varchar(255) DEFAULT NULL,
+  `value` text,
+  `handle-de` varchar(255) DEFAULT NULL,
+  `value-de` text,
+  `word_count-de` int(11) unsigned DEFAULT NULL,
+  `value_format-de` text,
+  `handle-en` varchar(255) DEFAULT NULL,
+  `value-en` text,
+  `word_count-en` int(11) unsigned DEFAULT NULL,
+  `value_format-en` text,
+  PRIMARY KEY (`id`),
+  KEY `entry_id` (`entry_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+
+-- *** DATA: `tbl_entries_data_22` ***
+INSERT INTO `tbl_entries_data_22` (`id`, `entry_id`, `handle`, `value`, `handle-de`, `value-de`, `word_count-de`, `value_format-de`, `handle-en`, `value-en`, `word_count-en`, `value_format-en`) VALUES (24, 49, 'http-santede', 'http://sante.de', 'http-santede', 'http://sante.de', 1, 'http://sante.de', NULL, NULL, 0, NULL);
 
 -- *** STRUCTURE: `tbl_entries_data_4` ***
 DROP TABLE IF EXISTS `tbl_entries_data_4`;
@@ -513,6 +542,7 @@ INSERT INTO `tbl_entries_data_9` (`id`, `entry_id`, `role_id`) VALUES (12, 8, 1)
 -- *** DATA: `tbl_entries` ***
 INSERT INTO `tbl_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (7, 1, 1, '2011-11-02 04:17:55', '2011-11-02 11:17:55');
 INSERT INTO `tbl_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (8, 1, 1, '2011-11-10 15:02:07', '2011-11-10 23:02:07');
+INSERT INTO `tbl_entries` (`id`, `section_id`, `author_id`, `creation_date`, `creation_date_gmt`) VALUES (49, 2, 1, '2011-11-10 18:07:35', '2011-11-11 02:07:35');
 
 -- *** DATA: `tbl_extensions` ***
 INSERT INTO `tbl_extensions` (`id`, `name`, `status`, `version`) VALUES (1, 'xssfilter', 'enabled', 1.1);
@@ -596,11 +626,11 @@ INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (7, 'Activation', 'activation', 'memberactivation', 1, 'no', 6, 'sidebar', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (11, 'Gender', 'gender', 'select', 1, 'yes', 4, 'sidebar', 'yes');
 INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (9, 'Role', 'role', 'memberrole', 1, 'yes', 7, 'sidebar', 'yes');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (13, 'Member', 'member', 'selectbox_link', 2, 'yes', 2, 'main', 'no');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (14, 'Name', 'name', 'multilingual', 2, 'yes', 0, 'main', 'yes');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (15, 'URL', 'url', 'multilingual', 2, 'no', 1, 'main', 'yes');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (16, 'Cover', 'cover', 'uniqueupload', 2, 'no', 3, 'sidebar', 'yes');
-INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (17, 'Description', 'description', 'multilingual', 2, 'no', 4, 'main', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (13, 'Member', 'member', 'selectbox_link', 2, 'yes', 4, 'main', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (14, 'Name', 'name', 'multilingual', 2, 'no', 0, 'main', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (22, 'URL', 'url', 'multilingual', 2, 'no', 2, 'main', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (16, 'Cover', 'cover', 'uniqueupload', 2, 'no', 1, 'sidebar', 'yes');
+INSERT INTO `tbl_fields` (`id`, `label`, `element_name`, `type`, `parent_section`, `required`, `sortorder`, `location`, `show_column`) VALUES (17, 'Description', 'description', 'multilingual', 2, 'no', 3, 'main', 'yes');
 
 -- *** DATA: `tbl_members_roles` ***
 INSERT INTO `tbl_members_roles` (`id`, `name`, `handle`) VALUES (1, 'Public', 'public');
@@ -613,7 +643,8 @@ INSERT INTO `tbl_members_roles` (`id`, `name`, `handle`) VALUES (3, 'Not yet act
 
 -- *** DATA: `tbl_pages` ***
 INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (1, NULL, 'Home', 'home', NULL, 'pt1/pt2/pt3', 'members', NULL, 1);
-INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (2, NULL, 'Member', 'member', NULL, 'pt1/pt2', NULL, 'members_activate_account,members_create,members_generate_recovery_code,members_regenerate_activation_code,members_reset_password', 2);
+INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (2, NULL, 'Member', 'member', NULL, 'pt1/pt2', 'members', 'members_activate_account,members_create,members_generate_recovery_code,members_regenerate_activation_code,members_reset_password', 2);
+INSERT INTO `tbl_pages` (`id`, `parent`, `title`, `handle`, `path`, `params`, `data_sources`, `events`, `sortorder`) VALUES (3, NULL, 'Project', 'project', NULL, 'pt1/pt2/pt3', 'members', 'project_create', 3);
 
 -- *** DATA: `tbl_pages_types` ***
 INSERT INTO `tbl_pages_types` (`id`, `page_id`, `type`) VALUES (3, 1, 'index');
@@ -623,4 +654,4 @@ INSERT INTO `tbl_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, 
 INSERT INTO `tbl_sections` (`id`, `name`, `handle`, `sortorder`, `entry_order`, `entry_order_direction`, `hidden`, `navigation_group`) VALUES (2, 'Project', 'project', 2, NULL, 'asc', 'no', 'Members');
 
 -- *** DATA: `tbl_sections_association` ***
-INSERT INTO `tbl_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (8, 1, 5, 2, 13, 'no');
+INSERT INTO `tbl_sections_association` (`id`, `parent_section_id`, `parent_section_field_id`, `child_section_id`, `child_section_field_id`, `hide_association`) VALUES (40, 1, 5, 2, 13, 'no');

@@ -22,10 +22,6 @@
 					</xsl:otherwise>
 				</xsl:choose>
 				
-				
-				<p><strong><xsl:value-of select="//members/entry/first-name" disable-output-escaping="yes" /></strong>, you are logged in. (<a href="?member-action=logout&amp;redirect={$current-url}">Logout</a>)</p>
-			
-			
 		</xsl:when>
 		<xsl:otherwise>
 		
@@ -34,7 +30,8 @@
 		        <p>This is the new Edelstall site .. </p>
 		        <!--<p><a class="btn primary large">Learn more »</a></p>-->
 		      </div>
-		
+			
+			
 			<form method="post" autocomplete="off" action="">
 			
 				<fieldset>

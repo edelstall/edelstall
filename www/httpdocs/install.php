@@ -200,6 +200,7 @@
 		$conf['members']['cookie-prefix'] = 'sym-members';
 		$conf['members']['section'] = '1';
 		$conf['members']['identity'] = '5';
+		$conf['language_redirect']['language_codes'] = 'de, en';
 
 		return $conf;
 

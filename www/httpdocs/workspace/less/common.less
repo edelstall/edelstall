@@ -1,1 +1,47 @@
-  
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @alpha) {
+  @val: @x @y @blur rgba(0, 0, 0, @alpha);
+
+  box-shadow:         @val;
+  -webkit-box-shadow: @val;
+  -moz-box-shadow:    @val;
+}
+
+body {
+	padding: 60px 0;
+}
+
+.projects {
+	margin:  0px 0 100px 0;
+	
+	.entry {
+		float: left;
+		
+		.cover {
+			width: 300px;
+			height: 300px;
+			display: block;
+			
+			.box-shadow(0, 5px, 10px, .2);
+		}
+	}
+}
+
+
+.clear:after{
+    content:"."; 
+    display:block; 
+    height:0; 
+    clear:both; 
+    visibility:hidden;
+}
+.clear{
+    display:inline-block;
+}
+/* Hides from IE-mac \*/
+* html .clear {
+    height: 1%;
+}
+.clear {
+    display: block;
+}
