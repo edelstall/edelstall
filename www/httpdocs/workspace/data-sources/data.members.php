@@ -7,28 +7,28 @@
 		public $dsParamROOTELEMENT = 'members';
 		public $dsParamORDER = 'desc';
 		public $dsParamPAGINATERESULTS = 'yes';
-		public $dsParamLIMIT = '20';
+		public $dsParamLIMIT = '1';
 		public $dsParamSTARTPAGE = '1';
 		public $dsParamREDIRECTONEMPTY = 'no';
+		public $dsParamREQUIREDPARAM = '$member-id';
 		public $dsParamSORT = 'system:id';
 		public $dsParamHTMLENCODE = 'yes';
 		public $dsParamASSOCIATEDENTRYCOUNTS = 'no';
 
-		
+		public $dsParamFILTERS = array(
+				'id' => '{$member-id}',
+		);
 
 		public $dsParamINCLUDEDELEMENTS = array(
 				'system:pagination',
-				'full-name',
 				'first-name',
-				'middle-name',
 				'last-name',
 				'email',
+				'gender',
 				'password',
 				'activation',
 				'role',
-				'role: permissions',
-				'date-created',
-				'gender'
+				'role: permissions'
 		);
 
 
@@ -42,10 +42,10 @@
 				'name' => 'Members',
 				'author' => array(
 					'name' => 'Admin Admin',
-					'website' => 'http://churchdeploy',
+					'website' => 'http://edelstall',
 					'email' => 'noreply@churchdeploy.com'),
 				'version' => 'Symphony 2.2.4',
-				'release-date' => '2011-11-01T22:45:48+00:00'
+				'release-date' => '2011-11-10T23:58:30+00:00'
 			);
 		}
 

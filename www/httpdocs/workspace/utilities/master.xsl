@@ -6,6 +6,9 @@
     version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	>
+	
+<xsl:param name="url-language" />
+
 <xsl:output
 	doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
 	doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
@@ -54,7 +57,7 @@
 				<link rel="stylesheet" type="text/css" href="{$workspace}/css/slideshow.css" />
 			</xsl:if>
 			
-			<link rel="stylesheet" href="{$workspace}/bootstrap/bootstrap.min.css" />
+			<link rel="stylesheet" type="text/css" href="{$workspace}/bootstrap/bootstrap.min.css" />
 			<link rel="stylesheet" type="text/css" href="{$workspace}/css/common.css" />
 			
             <xsl:comment><![CDATA[[if IE]><link rel="stylesheet" type="text/css" href="]]><xsl:value-of select="$workspace"/><![CDATA[/css/ie.css" media="screen" /><![endif]]]></xsl:comment>
@@ -63,51 +66,38 @@
 		
 		<body class="page-{$current-page}">
 
-			<div class="topbar-wrapper" style="z-index: 5;">
-				<div class="topbar" data-dropdown="dropdown">
-					<div class="topbar-inner">
-						<div class="container">
-							<h3><a href="#"><xsl:value-of select="$website-name" disable-output-escaping="yes" /></a></h3>
-							<ul class="nav">
-								<li class="active"><a href="#">Home</a></li>
-								<li><a href="#">Add a project</a></li>
-								<li><a href="#">Link</a></li>
-								<li><a href="#">Link</a></li>
-							</ul>
-							<!--
-							<li class="dropdown">
-							<a href="#" class="dropdown-toggle">Dropdown</a>
-							<ul class="dropdown-menu">
-							<li><a href="#">Secondary link</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li><a href="#">Another link</a></li>
-							</ul>
+			<div class="topbar">
+				<div class="fill">
+					<div class="container">
+						<a href="{$root}/{$url-language}/" class="brand">
+							<xsl:value-of select="$website-name" disable-output-escaping="yes" />
+						</a>
+						<ul class="nav">
+							<li>
+								<xsl:if test="not($pt1) and $current-page = 'home'">
+									<xsl:attribute name="class">
+										<xsl:text>active</xsl:text>
+									</xsl:attribute>
+								</xsl:if>
+								<a href="{$root}/{$url-language}/">Home</a>
 							</li>
-							</ul>
-							<form class="pull-left" action="">
-							<input type="text" placeholder="Search" />
-							</form>
-							<ul class="nav secondary-nav">
-							<li class="dropdown">
-							<a href="#" class="dropdown-toggle">Dropdown</a>
-							<ul class="dropdown-menu">
-							<li><a href="#">Secondary link</a></li>
-							<li><a href="#">Something else here</a></li>
-							<li class="divider"></li>
-							<li><a href="#">Another link</a></li>
-							</ul>
+							<li>
+								<xsl:if test="$current-page = 'project'">
+									<xsl:attribute name="class">
+										<xsl:text>active</xsl:text>
+									</xsl:attribute>
+								</xsl:if>
+								<a href="{$root}/{$url-language}/project/">Projects</a>
 							</li>
-							</ul>-->
-						</div>
-					</div><!-- /topbar-inner -->
-				</div><!-- /topbar -->
+						</ul>
+					</div>
+				</div>
 			</div>
 
             <div class="container">
-
+				
                 <xsl:apply-templates />
-            
+            	
             </div>
 
 			<xsl:element name="script">
@@ -163,6 +153,47 @@
 	</html>
 	
 </xsl:template>
+
+
+
+
+
+<xsl:template name="form-messages">
+
+	<xsl:if test="@result = 'error'">
+		
+		<div class="alert-message block-message error">
+			<!--<a class="close" href="#">×</a>-->
+			<p><strong><xsl:value-of select="message" /></strong></p>
+			<ul>
+				<xsl:for-each select="node()">
+					<xsl:if test="string-length(@message)">
+						<li><xsl:value-of select="@message" /></li>
+					</xsl:if>
+				</xsl:for-each>
+			</ul>
+		</div>
+		
+	</xsl:if>
+	
+	<xsl:if test="@result = 'success'">
+		
+		<div class="alert-message success">
+			<!--<a class="close" href="#">×</a>-->
+			<p><xsl:value-of select="message" /></p>
+		</div>
+		
+	</xsl:if>
+
+</xsl:template>
+
+
+
+
+
+
+
+
 
 
 

@@ -23,30 +23,7 @@
 				
 				<xsl:for-each select="//events/members-create">
 	
-					<xsl:if test="@result = 'error'">
-						
-						<div class="alert-message block-message error">
-							<!--<a class="close" href="#">×</a>-->
-							<p><strong><xsl:value-of select="message" /></strong></p>
-							<ul>
-								<xsl:for-each select="node()">
-									<xsl:if test="string-length(@message)">
-										<li><xsl:value-of select="@message" /></li>
-									</xsl:if>
-								</xsl:for-each>
-							</ul>
-						</div>
-						
-					</xsl:if>
-					
-					<xsl:if test="@result = 'success'">
-						
-						<div class="alert-message success">
-							<!--<a class="close" href="#">×</a>-->
-							<p><xsl:value-of select="message" /></p>
-						</div>
-						
-					</xsl:if>
+					<xsl:call-template name="form-messages" />
 								
 				</xsl:for-each>
 

@@ -9,18 +9,31 @@
 <xsl:template match="data">
 	
 	
-	<h1>Willkommen</h1>
 
 	<xsl:choose>
 		<xsl:when test="$member-is-logged-in">
 			
+				<xsl:choose>
+					<xsl:when test="$pt1 = 'project'">
+						<xsl:call-template name="project-add" />
+					</xsl:when>
+					<xsl:otherwise>
+						
+					</xsl:otherwise>
+				</xsl:choose>
+				
+				
+				<p><strong><xsl:value-of select="//members/entry/first-name" disable-output-escaping="yes" /></strong>, you are logged in. (<a href="?member-action=logout&amp;redirect={$current-url}">Logout</a>)</p>
 			
 			
-			
-			<p>You are logged in. (<a href="?member-action=logout&amp;redirect={$current-url}">Logout</a>)</p>
-		
 		</xsl:when>
 		<xsl:otherwise>
+		
+		<div class="hero-unit">
+		        <h1>Willkommen</h1>
+		        <p>This is the new Edelstall site .. </p>
+		        <!--<p><a class="btn primary large">Learn more »</a></p>-->
+		      </div>
 		
 			<form method="post" autocomplete="off" action="">
 			
@@ -61,6 +74,22 @@
 	       
 
 </xsl:template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

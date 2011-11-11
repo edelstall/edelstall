@@ -18,50 +18,7 @@ $(document).ready(
         }
         
 
-        if( $('#register-date-day').exists() )
-        {
-        	if( $('#register-date-day').val() ) { $('#register-date-day').val( $('#register-date-day-value').val() ); }
-        	if( $('#register-date-month').val() ) { $('#register-date-month').val( $('#register-date-month-value').val() ); }
-        	if( $('#register-date-year').val() ) { $('#register-date-year').val( $('#register-date-year-value').val() ); }
-        	
-        	$('#register-date-day, #register-date-month, #register-date-year').change(registerAssembleDate);
-			
-			$('form').submit( 
-				function()
-				{ 
-					if( 
-						$('#register-date-day').val() != -1 &&
-						$('#register-date-month').val() != -1 &&
-						$('#register-date-year').val() != -1 
-					)
-					{
-						return true;
-					}
-					
-					$('#register-date-fields').addClass('error');
-					alert('Birthday is a required field.');
-					
-					return false; 
-				} 
-			);
-			
-			function registerAssembleDate()
-			{
-	        	if( 
-	        		$('#register-date-day').val() != -1 &&
-	        		$('#register-date-month').val() != -1 &&
-	        		$('#register-date-year').val() != -1 
-	        	)
-	        	{
-	        		$('#register-date').val( 
-	        			$('#register-date-day').val() + ' ' + 
-	        			$('#register-date-month').val() + ' ' + 
-	        			$('#register-date-year').val() 
-	        		);
-	        	}
-	        }
-        	
-        }
+
         
 
         // back to top

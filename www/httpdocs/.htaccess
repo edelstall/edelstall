@@ -50,7 +50,9 @@ Options +FollowSymlinks -Indexes
 	RewriteRule ^symphony(\/(.*\/?))?$ index.php?symphony-page=$1&mode=administration&%{QUERY_STRING}	[NC,L]
 
 	### LANGUAGE REDIRECT RULES start
-	### no language codes set
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(de|en)-?()?\/(.*\/?)$ index.php?language=$1&region=$2&symphony-page=$3&%{QUERY_STRING} [L]
 	### LANGUAGE REDIRECT RULES end
 
 	### FRONTEND REWRITE - Will ignore files and folders

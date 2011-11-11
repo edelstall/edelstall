@@ -134,4 +134,11 @@
 			'password' => 'k42j3b42kjb',
 		),
 		########
+		
+		
+		###### LANGUAGE_REDIRECT ######
+		'language_redirect' => array(
+			'language_codes' => 'de, en',
+		),
+		########
 	);
