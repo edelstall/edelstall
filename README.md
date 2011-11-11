@@ -1,7 +1,6 @@
 # Setup
 
 - *Instructions are for a Mac*
-- *In the future, the instructions will be abstracted to `church deploy`, instead of the `atheycreek` use-case* 
 
 ## Local environment
 
@@ -10,18 +9,18 @@
 - In *Terminal* type `cd ` and then drag and drop the folder you just created into the *Terminal* window, hit return.
 - Run the following commands
 
-	   	git clone git@github.com:atheycreek/churchdeploy.git
-		cd churchdeploy
+	   	git clone git@github.com:edelstall/edelstall.git
+		cd edelstall
 		git submodule update --init
 		cd www/httpdocs/extensions/datetime
 		git submodule update --init
 
-- Use `http://churchdeploy/` as your local hosting environment 
+- Use `http://edelstall/` as your local hosting environment 
 	- Have the root pointing to *httpdocs*
     - We recommend [MAMP PRO](http://www.shareit.com/programs.html?productid=300169372)
-- Setup a database named `churchdeploy` with the both the username and password set to `root`
+- Setup a database named `edelstall` with the both the username and password set to `root`
     - database encoding should be `UTF-8`
-- The default admin account credentials for `http://churchdeploy/symphony/`
+- The default admin account credentials for `http://edelstall/symphony/`
     - **User:** admin  
     - **Password:** k42j3b42kjb
 - Be sure to set all files to read/write, we recommend using [BatChMod](http://www.lagentesoft.com/batchmod/index.html) (Check all checkboxes once you have the selected directory, see [example](http://see.weareinto.com/9Q73))
